@@ -141,7 +141,7 @@ header {
 .hero {
     margin-bottom: 40px;
     height: 250px;
-    background-image: url(assets/Mobile_header.png);
+    background-image: url(https://raw.githubusercontent.com/rvertulfo/bravo_task/main/assets/Mobile_header.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -152,7 +152,7 @@ header {
     .hero {
         height: 100vh;
         max-height: 550px;
-        background-image: url(assets/Desktop_header.png);
+        background-image: url(https://raw.githubusercontent.com/rvertulfo/bravo_task/main/assets/Desktop_header.png);
 
 
 
@@ -182,13 +182,15 @@ header {
 }
 
 .event-list {
-
+   display: block;
 }
 .event-item {
     display: inline-block;
     width: 100%;
     padding: 0;
     margin-bottom: 20px;
+    flex: 1;
+
 
 }
 .event-item-content {
@@ -199,9 +201,10 @@ header {
 
 }
 .event-item-image {
+    position: relative;
     display: inline-block;
     width: 30%;
-    min-width: 150px;
+    max-width: 150px;
     vertical-align: top;
     overflow: hidden;
 
@@ -210,14 +213,12 @@ header {
     position: relative;
     display: inline-block;
     width: calc(100% - 150px);
-
     padding: 12px 25px 10px 15px;
-
+    min-height: 100px;
 
 }
 .event-item-text::before {
     content: "";
-
     display: block;
     width: 25px;
     height: 100%;
@@ -225,13 +226,15 @@ header {
     right: 0;
     top: 0;
     bottom: 0;
-    background: url('assets/right_chevron.svg') no-repeat center;
+    background: url('https://raw.githubusercontent.com/rvertulfo/bravo_task/main/assets/right_chevron.svg') no-repeat center;
 
 }
 .event-item-image img {
+    position: absolute;
     width: auto;
     height: 100%;
-    max-height: 130px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 
 }
 .event-item h3 {
@@ -246,6 +249,9 @@ header {
     font-size: 11px
 }
 @media only screen and (min-width: 34em) {
+    .event-list {
+        display: flex;
+    }
     .event-item-text::before {
         content: "";
         display: none;
